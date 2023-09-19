@@ -10,8 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../minishell.h"
+
 #include <stdio.h>
 #include <string.h>
+
 
 int is_builtin(char *input)
 {
@@ -48,4 +51,25 @@ int is_builtin(char *input)
 // 	}
 // 	printf("Invalid argument");
 // }
+
+void	run_builtin(char **execute)
+{
+	char	*command;
+	command = execute[0];
+
+	if (ft_strcmp(command, "cd"))
+		builtin_cd(execute);
+	if (ft_strcmp(command, "pwd"))
+		builtin_pwd();
+	if (ft_strcmp(command, "exit"))
+		builtin_exit(execute);
+	if (ft_strcmp(command, "env"))
+		builtin_env();
+	if (ft_strcmp(command, "echo"))
+		builtin_echo(execute);
+	if (ft_strcmp(command, "export"))
+		builtin_export(execute);
+	if (ft_strcmp(command, "unset"))
+		builtin_unset(execute);
+}
 
