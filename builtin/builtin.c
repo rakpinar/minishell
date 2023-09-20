@@ -52,24 +52,25 @@ int is_builtin(char *input)
 // 	printf("Invalid argument");
 // }
 
+
 void	run_builtin(char **execute)
 {
-	char	*command;
-	command = execute[0];
+	int	command;
 
-	if (ft_strcmp(command, "cd"))
+	command = is_builtin(execute[0]);
+	if (command == CD)
 		builtin_cd(execute);
-	if (ft_strcmp(command, "pwd"))
-		builtin_pwd();
-	if (ft_strcmp(command, "exit"))
-		builtin_exit(execute);
-	if (ft_strcmp(command, "env"))
-		builtin_env();
-	if (ft_strcmp(command, "echo"))
-		builtin_echo(execute);
-	if (ft_strcmp(command, "export"))
-		builtin_export(execute);
-	if (ft_strcmp(command, "unset"))
-		builtin_unset(execute);
+	// if (command == ENV)
+	// 	builtin_env();
+	// if (command == PWD)
+	// 	builtin_pwd();
+	// if (command == ECHO)
+	// 	builtin_echo(execute);
+	// if (command == EXIT)
+	// 	builtin_exit(execute);
+	// if (command == UNSET)
+	// 	builtin_unset(execute);
+	// if (command == EXPORT)
+	// 	builtin_export(execute);
 }
 
