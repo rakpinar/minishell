@@ -58,14 +58,14 @@ void	run_builtin(char **execute)
 	int	command;
 
 	command = is_builtin(execute[0]);
-	if (command == CD)
-		builtin_cd(execute);
+	// if (command == CD)
+	// 	builtin_cd(execute);
 	// if (command == ENV)
 	// 	builtin_env();
 	// if (command == PWD)
 	// 	builtin_pwd();
-	// if (command == ECHO)
-	// 	builtin_echo(execute);
+	if (command == ECHO)
+		builtin_echo(execute);
 	// if (command == EXIT)
 	// 	builtin_exit(execute);
 	// if (command == UNSET)
